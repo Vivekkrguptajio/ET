@@ -1,0 +1,88 @@
+.roadmap-timeline {
+  margin-top: var(--sp-10);
+}
+
+.roadmap-title {
+  font-size: var(--fs-2xl);
+  margin-bottom: var(--sp-8);
+  text-align: center;
+}
+
+.timeline {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.timeline-item {
+  display: flex;
+  gap: var(--sp-5);
+  margin-bottom: var(--sp-6);
+  opacity: 0;
+}
+
+.timeline-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 20px;
+}
+
+.marker-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.marker-line {
+  width: 2px;
+  flex: 1;
+  background: #e2e8f0;
+  margin-top: var(--sp-2);
+}
+
+.timeline-card {
+  flex: 1;
+  padding: var(--sp-5);
+}
+
+.timeline-card:hover {
+  transform: translateY(-2px) translateX(4px);
+}
+
+.timeline-month {
+  font-size: var(--fs-xs);
+  color: var(--color-accent-blue);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--sp-2);
+}
+
+.timeline-milestone {
+  font-size: var(--fs-lg);
+  margin-bottom: var(--sp-2);
+}
+
+.timeline-desc {
+  font-size: var(--fs-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--sp-2);
+}
+
+.timeline-target {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  margin-top: var(--sp-2);
+}
+
+@media (max-width: 768px) {
+  .timeline-item {
+    gap: var(--sp-3);
+  }
+}

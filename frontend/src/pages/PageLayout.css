@@ -1,0 +1,50 @@
+/* Shared page layout styles */
+.page-wrapper {
+  padding-top: var(--nav-height);
+  min-height: 100vh;
+}
+
+.page-header {
+  padding: var(--sp-12) 0 var(--sp-8);
+  text-align: center;
+  background: linear-gradient(135deg, #f1f5f9 0%, #eff6ff 100%);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.page-tag {
+  display: inline-block;
+  padding: var(--sp-1) var(--sp-4);
+  background: var(--color-accent-blue-glow);
+  color: var(--color-accent-blue);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  border-radius: var(--radius-full);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: var(--sp-4);
+}
+
+.page-title {
+  font-size: var(--fs-4xl);
+  margin-bottom: var(--sp-3);
+}
+
+.page-subtitle {
+  color: var(--color-text-secondary);
+  font-size: var(--fs-base);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.page-body {
+  padding: var(--sp-10) 0;
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    padding: var(--sp-8) 0 var(--sp-6);
+  }
+  .page-title {
+    font-size: var(--fs-3xl);
+  }
+}

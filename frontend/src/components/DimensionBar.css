@@ -1,0 +1,43 @@
+.dimension-bar {
+  margin-bottom: var(--sp-5);
+}
+
+.dim-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--sp-2);
+}
+
+.dim-label {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-primary);
+}
+
+.dim-score {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  font-family: var(--font-display);
+}
+
+.dim-max {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+}
+
+.dim-track {
+  width: 100%;
+  height: 10px;
+  background: #e2e8f0; /* Slate 200 */
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.dim-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 1s ease-out;
+  position: relative;
+}

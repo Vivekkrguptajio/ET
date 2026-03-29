@@ -1,0 +1,64 @@
+.module-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  text-decoration: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.module-card:hover {
+  border-color: var(--card-accent);
+}
+
+.module-icon-wrap {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(37, 99, 235, 0.08); /* Light blue tint */
+  border-radius: var(--radius-md);
+  color: var(--card-accent);
+  font-size: 28px;
+  transition: all var(--transition-base);
+}
+
+.module-card:hover .module-icon-wrap {
+  transform: scale(1.1);
+  background: color-mix(in srgb, var(--card-accent) 20%, transparent);
+}
+
+.module-title {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+}
+
+.module-desc {
+  color: var(--color-text-secondary);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-relaxed);
+  flex: 1;
+}
+
+.module-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  color: var(--card-accent);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-sm);
+  transition: all var(--transition-base);
+}
+
+.module-card:hover .module-cta {
+  gap: var(--sp-3);
+}
+
+.module-cta svg {
+  transition: transform var(--transition-base);
+}
+
+.module-card:hover .module-cta svg {
+  transform: translateX(4px);
+}

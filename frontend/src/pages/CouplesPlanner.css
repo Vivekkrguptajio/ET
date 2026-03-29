@@ -1,0 +1,20 @@
+.chart-section {
+  margin-top: var(--sp-8);
+}
+
+.chart-title {
+  font-size: var(--fs-xl);
+  margin-bottom: var(--sp-6);
+}
+
+.chart-wrapper {
+  position: relative;
+  height: 350px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .chart-wrapper {
+    height: 260px;
+  }
+}
