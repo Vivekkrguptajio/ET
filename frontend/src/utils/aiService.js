@@ -4,7 +4,7 @@
  * Falls back to mock responses when backend is unavailable.
  */
 
-const API_BASE = '/api';
+const API_BASE = import.meta.env.VITE_API_URL || '/api';
 
 // Store JWT token
 let authToken = null;
