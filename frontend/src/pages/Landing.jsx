@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import HeroSection from '../components/HeroSection';
 import ModuleCard from '../components/ModuleCard';
 import CTAFooter from '../components/CTAFooter';
@@ -36,8 +35,6 @@ const modules = [
 ];
 
 export default function Landing() {
-  const navigate = useNavigate();
-
   return (
     <div className="landing-page" id="landing-page">
       <HeroSection

@@ -63,6 +63,7 @@ export default function TaxWizard() {
       </div>
 
       <div className="container page-body">
+        {!result ? (
         <FormCard
           title="Your Financial Details"
           subtitle="Fill in your income and investment details for a personalized tax analysis."
@@ -79,12 +80,16 @@ export default function TaxWizard() {
           <FormField label="Age" id="age" type="number" placeholder="e.g. 28" value={form.age} onChange={update('age')} />
           <FormField label="City Type" id="city" type="select" value={form.city} onChange={update('city')} options={[{ value: 'metro', label: 'Metro (Delhi, Mumbai, etc.)' }, { value: 'non-metro', label: 'Non-Metro' }]} />
         </FormCard>
-
-        {result && (
-          <>
+        ) : (
+          <div className="wizard-results animate-fadeInUp">
             <MetricRow metrics={result.metrics} />
-            <AIResponseBox response={result.response} loading={loading} />
-          </>
+            <AIResponseBox response={result.response} />
+            <div className="retake-section">
+              <button className="btn-secondary" onClick={() => setResult(null)}>
+                🔄 Recalculate
+              </button>
+            </div>
+          </div>
         )}
       </div>
 

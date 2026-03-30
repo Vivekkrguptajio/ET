@@ -120,6 +120,7 @@ export default function CouplesPlanner() {
       </div>
 
       <div className="container page-body">
+        {!result ? (
         <FormCard
           title="Couple's Financial Profile"
           subtitle="Enter both partners' details for a joint analysis and smart splitting recommendations."
@@ -136,9 +137,8 @@ export default function CouplesPlanner() {
           <FormField label="Partner 1 Monthly Savings" id="savings1" type="number" placeholder="e.g. 20000" value={form.savings1} onChange={update('savings1')} prefix="₹" />
           <FormField label="Partner 2 Monthly Savings" id="savings2" type="number" placeholder="e.g. 15000" value={form.savings2} onChange={update('savings2')} prefix="₹" />
         </FormCard>
-
-        {result && (
-          <>
+        ) : (
+          <div className="wizard-results animate-fadeInUp">
             <MetricRow metrics={result.metrics} />
 
             <div className="chart-section card animate-fadeInUp">
@@ -149,7 +149,13 @@ export default function CouplesPlanner() {
             </div>
 
             <AIResponseBox response={result.response} />
-          </>
+            
+            <div className="retake-section">
+              <button className="btn-secondary" onClick={() => setResult(null)}>
+                🔄 Recalculate
+              </button>
+            </div>
+          </div>
         )}
       </div>
 

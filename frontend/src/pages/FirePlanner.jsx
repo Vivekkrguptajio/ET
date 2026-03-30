@@ -52,6 +52,7 @@ export default function FirePlanner() {
       </div>
 
       <div className="container page-body">
+        {!result ? (
         <FormCard
           title="Your FIRE Profile"
           subtitle="Tell us about your finances to calculate your FIRE number and roadmap."
@@ -68,13 +69,17 @@ export default function FirePlanner() {
           <FormField label="Risk Tolerance" id="risk-tolerance" type="select" value={form.riskTolerance} onChange={update('riskTolerance')} options={[{ value: 'conservative', label: 'Conservative' }, { value: 'moderate', label: 'Moderate' }, { value: 'aggressive', label: 'Aggressive' }]} />
           <FormField label="City Type" id="fire-city" type="select" value={form.city} onChange={update('city')} options={[{ value: 'metro', label: 'Metro City' }, { value: 'tier2', label: 'Tier 2 City' }, { value: 'rural', label: 'Rural / Small Town' }]} />
         </FormCard>
-
-        {result && (
-          <>
+        ) : (
+          <div className="wizard-results animate-fadeInUp">
             <MetricRow metrics={result.metrics} />
             <RoadmapTimeline milestones={result.milestones} />
             <AIResponseBox response={result.response} />
-          </>
+            <div className="retake-section">
+              <button className="btn-secondary" onClick={() => setResult(null)}>
+                🔄 Recalculate
+              </button>
+            </div>
+          </div>
         )}
       </div>
 

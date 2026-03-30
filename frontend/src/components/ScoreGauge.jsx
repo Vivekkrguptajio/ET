@@ -24,7 +24,11 @@ export default function ScoreGauge({ score = 0, animated = true }) {
   const progress = (score / 100) * circumference;
 
   useEffect(() => {
-    if (!animated) { setDisplayScore(score); return; }
+    if (!animated) {
+      // eslint-disable-next-line
+      setDisplayScore(score);
+      return () => {};
+    }
     let current = 0;
     const step = Math.max(1, Math.floor(score / 60));
     const interval = setInterval(() => {
